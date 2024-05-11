@@ -1,38 +1,333 @@
-.App {
-  text-align: center;
+:root {
+  --main-bg-color: #162c4e;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url("./fonts/Poppins-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url("./fonts/Poppins-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url("./fonts/Poppins-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+.app {
+  font-family: "Poppins", serif;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.bgRight {
+  height: 100%;
+  justify-self: end;
+}
+
+.bgLeft {
+  height: 100%;
+}
+
+.logo {
+  text-decoration: none;
+}
+
+.main {
+  padding: 16px;
+}
+
+.title {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20px;
+}
+
+.linkLogo {
+  display: grid;
+  place-items: center;
+}
+
+.h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--main-bg-color);
+  opacity: 0.5;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 36px;
+}
+
+.titleP {
+  text-align: center;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.counter {
+  display: flex;
+  gap: 18px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.counterTime {
+  position: relative;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.counterNum {
+  padding-bottom: 5px;
+  color: var(--main-bg-color);
+  font-size: 36px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.countContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.count {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: aliceblue;
+  font-size: 12px;
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eventBtn {
+  margin-top: 20px;
+  background: url(../src/img/arrow.png) no-repeat center;
+}
+
+.eventP {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: var(--main-bg-color);
+  color: #fff;
+  border-radius: 50px;
+  width: 240px;
+  height: 60px;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+}
+
+.btnContent {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: var(--main-bg-color);
+  width: 100%;
+  padding: 50px 40px;
+}
+
+.formEmail {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  width: 280px;
+  background-color: #fff;
+  margin: 50px 40px;
+  position: relative;
+  border-radius: 30px;
+}
+
+@media (min-width: 768px) {
+  .formEmail {
+    width: 360px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .footer {
+    padding: 60px 16px;
   }
+}
+
+@media (min-width: 1920px) {
+  .formEmail {
+    width: 440px;
+  }
+
+  .footer {
+    padding: 60px 16px 72px;
+  }
+}
+
+.inputEmail {
+  border-radius: 30px;
+  flex: 1;
+  padding: 10px 20px;
+
+  border: none;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.inputEmail:focus {
+  outline: none;
+}
+
+.btnEmail {
+  background: url(../src/img/arrow.png) no-repeat center;
+  width: 33px;
+  height: 33px;
+  cursor: pointer;
+  background-color: red;
+  border-radius: 50%;
+  background-size: 15px;
+  border: none;
+  position: relative;
+  margin: 4px;
+  padding: 0;
+  margin-left: 0;
+}
+
+.popup {
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  z-index: 20;
+  background: #fff;
+  width: 320px;
+  padding: 70px 20px;
+  margin-left: -160px;
+  color: var(--main-bg-color);
+}
+
+.popupHeader {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.popupDescription {
+  font-size: 16px;
+}
+
+.popup:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -2;
+}
+
+.popup:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  z-index: -1;
+}
+
+.btnPopup {
+  border-radius: 30px;
+  padding: 16px 74px;
+  color: #fff;
+  background-color: var(--main-bg-color);
+  border: none;
+  cursor: pointer;
+}
+
+.signPopup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
 }
