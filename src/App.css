@@ -71,6 +71,9 @@ h6 {
 
 .app {
   font-family: "Poppins", serif;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 .header {
@@ -202,9 +205,6 @@ h6 {
 .footer {
   display: flex;
   justify-content: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   background-color: var(--main-bg-color);
   width: 100%;
   padding: 50px 40px;
